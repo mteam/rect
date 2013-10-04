@@ -24,6 +24,15 @@ Rect.prototype.toString = function() {
 
 // --- manipulation ---
 
+Rect.prototype.copy = function(rect) {
+  this.left = rect.left;
+  this.top = rect.top;
+  this.width = rect.width;
+  this.height = rect.height;
+
+  this.update();
+};
+
 Rect.prototype.place = function(x, y) {
   this.left = x;
   this.top = y;
