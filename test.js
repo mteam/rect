@@ -85,6 +85,24 @@ describe('Rect', function() {
       expect(rect.includes(110, 110)).to.be(true);
     });
   });
+
+  describe('#wraps', function() {
+    
+    it('should return true when inside', function() {
+      var a = new Rect(10, 10, 100, 100),
+          b = new Rect(20, 20, 30, 30);
+
+      expect(a.wraps(b)).to.be(true);
+    });
+
+    it('should return false when not inside', function() {
+      var a = new Rect(10, 10, 100, 100),
+          b = new Rect(50, 10, 100, 100);
+
+      expect(a.wraps(b)).to.be(false);
+    });
+  
+  });
   
   describe('#overlap', function() {
     it('should return null when not overlapping', function() {

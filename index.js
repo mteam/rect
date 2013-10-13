@@ -74,6 +74,15 @@ Rect.prototype.includes = function(x, y) {
   );
 };
 
+Rect.prototype.wraps = function(rect) {
+  return (
+    this.left <= rect.left &&
+    this.right >= rect.right &&
+    this.top <= rect.top &&
+    this.bottom >= rect.bottom
+  );
+};
+
 Rect.prototype.overlap = function(rect) {
   if (!this.collides(rect)) return null;
   
